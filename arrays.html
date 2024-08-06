@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var marks=[45,67,87,89,90,98];
+        console.log(marks);
+
+        marks.push(100);
+
+        console.log(marks);
+
+        var removed = marks.pop();
+
+        console.log('Removed item :' + removed)
+        console.log(marks);
+
+        let total =0;
+
+        marks.forEach((mark)=> total+= mark)
+
+        console.log(total);
+
+        let totalmarks = marks.reduce((sum, value)=> { return sum+value },0);
+
+        console.log(totalmarks);
+
+        function Test()
+        {
+            let myvar="Sunday";
+            let newvar="Monday";
+
+            function Test1()
+            {
+                console.log(myvar + newvar);
+            }
+
+            return Test1;
+        }
+
+        let myfunction = Test();
+            myfunction()
+        
+        function test3(innerMethod)
+        {
+            console.log('Inside test 3 begin')
+            innerMethod();
+            console.log('Inside test 3 end')
+
+        }
+
+        test3(myfunction);
+
+
+        let colours=['red','blue','green','red','yellow','green','violet','green','blue']
+
+        //obj={'red':2, 'blue':2, 'green':3, 'yellow':1,'violet':1 }
+
+        //obj={}
+        //obj={'red':2,'blue':1,'green':1}
+
+        //obj['cyan'] =0
+
+        let obj = colours.reduce((collector, value)=>
+        {
+            if(collector[value])
+                {
+                    collector[value]=collector[value] +1
+                }
+                else
+                {
+                    collector[value] =1
+                }
+
+            return collector
+        }, 
+        
+        {})
+
+        console.log(obj);
+   
+
+        //Assignment
+        
+
+        marks1 =[12,56,78,54,67,78,23,43,67]
+
+        let results = marks1.reduce((coll, val)=>{
+            if(val>=45)
+                {
+                    coll['passed']++
+                }
+                else{
+                    coll['failed']++
+                }
+
+                return coll;
+
+        },{'passed':0,'failed':0})
+
+        console.log(results);
+        
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
